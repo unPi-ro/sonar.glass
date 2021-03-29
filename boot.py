@@ -17,7 +17,7 @@ def tick(timer):
 timer.init(freq=2, mode=Timer.PERIODIC, callback=tick)
 
 # be fast! or your IDE will be slow to connect to Pico if:
-#utime.sleep(5)
+## utime.sleep(5)
 
 # our Reset/s Time Clock at boot
 with open('boot.txt', 'w') as f:
