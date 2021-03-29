@@ -14,7 +14,7 @@ while True:
     # Typically, Vbe = 0.706V at 27 degrees C, with a slope of -1.721mV (0.001721) per degree. 
     temperature = 27 - (reading - 0.706) / 0.001721
     
-    # interestingly, Pico has an up-to-date realtime clock
+    # interesting, Pico has an reset-at-boot realtime clock
     print(temperature, "C degrees at", utime.localtime())
     
     utime.sleep(2)
