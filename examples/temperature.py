@@ -17,4 +17,6 @@ while True:
     # interesting, Pico has an reset-at-boot realtime clock
     print(temperature, "C degrees at", utime.localtime())
     
+    # enviroment's temperature should be about temperature-5, more at https://www.youtube.com/watch?v=rU381A-b79c
+    
     utime.sleep(2)
