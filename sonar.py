@@ -9,10 +9,12 @@ import utime
 
 INFINITY = micropython.const(float('inf'))
 
+@micropython.native
 class Ultrasonic():
     # supports (only) the low voltage (simple, standard, non i2c breakouts) HC-SR04+ or HC-SR04p sensor
     # https://shop.4tronix.co.uk/collections/sensors/products/hc-sr04p-low-voltage-ultrasonic-distance-sensor
     
+    RANGE = 450 # max range of this ultrasonic sensor in centimeters
     (start, stop, distance, calculated) = (0.0, 0.0, INFINITY, True)
     
     @property
