@@ -110,6 +110,6 @@ if __name__ == '__main__':
     
     # wait for sonar
     utime.sleep(0.5)
-    ucm = min(uLeft.cm, uRight.cm, uCenter.cm)
+    ucm = min(uLeft.cm, uCenter.cm, uRight.cm)
     print("nearest obstacle detected at", ucm, "cm, air temperature cca", temperature.celsius(), "C")
-    print("measurements [in cm] from all existing sonars were", uLeft.cm, uRight.cm, uCenter.cm)
+    print("measurements [in cm] from all existing sonars were", uLeft.cm, uCenter.cm, uRight.cm)
