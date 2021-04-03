@@ -7,6 +7,7 @@ import utime
 onboard_temperature_sensor = machine.ADC(4)
 conversion_factor = micropython.const(3.3 / 65535)
 
+@micropython.native
 def raw():
     reading = onboard_temperature_sensor.read_u16() * conversion_factor
     
@@ -15,7 +16,8 @@ def raw():
     temperature = 27 - (reading - 0.706) / 0.001721
     
     return temperature
- 
+
+@micropython.native
 def celsius():
     return raw()-5
     # environment's temperature should be about temperature-5, see https://www.youtube.com/watch?v=rU381A-b79c
