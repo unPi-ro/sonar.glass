@@ -20,5 +20,6 @@ def celsius():
     return raw()-5
     # environment's temperature should be about temperature-5, see https://www.youtube.com/watch?v=rU381A-b79c
 
+    
 if __name__ == '__main__':
     print("estimated", celsius(), "C degrees at", utime.localtime())
