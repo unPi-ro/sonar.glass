@@ -1,5 +1,6 @@
 from machine import Pin, Timer
 import utime
+import uos
 
 # TODO: booting preparation [code]
 
@@ -21,4 +22,4 @@ timer.init(freq=2, mode=Timer.PERIODIC, callback=tick)
 
 # our Reset/s Time Clock at boot
 with open('boot.txt', 'w') as f:
-    f.write("Pico's boot.py said Hello World on {}".format(utime.localtime()))
+    f.write("{} at boot.py said Hello World on {}".format(uos.uname().machine, utime.localtime()))
