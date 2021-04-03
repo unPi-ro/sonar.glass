@@ -30,7 +30,7 @@ class Ultrasonic():
                 speed = (331.3 + 0.606 * self.temperature)
                 # overwrite previously calculated distance only after doing ranging
                 # microseconds to seconds is / 1000000, then meters into cm is *100
-                # uticks could be a small number, try doing math * before / 10^4
+                # uticks could be a small number, better doing math * before / 10^4
                 self.distance = uticks * speed / 10000 / 2
                 self.calculated = True
                 return self.distance
