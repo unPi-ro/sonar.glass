@@ -107,12 +107,15 @@ if __name__ == '__main__':
     uCenter=Ultrasonic(triggerPin=11, echoPin=10)
 
     # trigger
+    utime.sleep(0.100)
     uLeft.measure()
+    utime.sleep(0.100)
     uRight.measure()
+    utime.sleep(0.100)
     uCenter.measure()
 
-    # wait for sonar
-    utime.sleep(0.5)
+    # wait for sonars
+    utime.sleep(0.050)
     ucm = min(uLeft.cm, uCenter.cm, uRight.cm)
     print("nearest obstacle detected at", ucm, "cm, air temperature cca", temperature.celsius(), "C")
     print("measurements [in cm] from all existing sonars were", uLeft.cm, uCenter.cm, uRight.cm)
