@@ -13,13 +13,13 @@ INFINITY = micropython.const(float('inf'))
 class Ultrasonic():
     # supports (only) the low voltage (simple, standard, non i2c breakouts) HC-SR04+ or HC-SR04p sensor
     # https://shop.4tronix.co.uk/collections/sensors/products/hc-sr04p-low-voltage-ultrasonic-distance-sensor
-    
+
     RANGE = 450 # max range of this ultrasonic sensor in centimeters
     # give it a name, vertical and horizontal field of view in degrees
     (name, orientation, verticalFoV, horizontalFoV) = ("", {}, 15, 30)
     # records stop/start micro ticks, plus last distance calculated
     (start, stop, distance, calculated) = (0.0, 0.0, INFINITY, True)
-    
+
     @property
     def cm(self):
         # show all cases
@@ -39,10 +39,10 @@ class Ultrasonic():
                 self.distance = uticks * speed / 10000 / 2
                 self.calculated = True
                 return self.distance
-                
+
     @property
     def mm(self): return self.cm * 10
-    
+
     @property
     def temperature(self):
         # leave room for improvement
@@ -53,7 +53,7 @@ class Ultrasonic():
         self.ranging = False
         # serving infinity 1st
         self.calculated = True
-        
+
         self.echo = Pin(echoPin, Pin.IN, Pin.PULL_DOWN)
         self.trigger = Pin(triggerPin, Pin.OUT, Pin.PULL_DOWN)
 
@@ -65,11 +65,11 @@ class Ultrasonic():
         # make sure is low
         self.trigger.low()
         utime.sleep_us(2)
-        
+
         # arming the IRQ (class) handlers
         self.trigger.irq(self.handlerRanging, Pin.IRQ_RISING)
         self.echo.irq(self.handlerStart, Pin.IRQ_RISING)
-    
+
     def measure(self):
         if not self.ranging:           
             self.trigger.high()
@@ -79,7 +79,7 @@ class Ultrasonic():
 
     def handlerRanging(self, pin):
         self.ranging = True
-        
+
     def handlerStart(self, pin):
         # will NOT trigger unless all PINs are connected
         if self.ranging:
@@ -110,7 +110,7 @@ if __name__ == '__main__':
     uLeft.measure()
     uRight.measure()
     uCenter.measure()
-    
+
     # wait for sonar
     utime.sleep(0.5)
     ucm = min(uLeft.cm, uCenter.cm, uRight.cm)
