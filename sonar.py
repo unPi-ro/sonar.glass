@@ -15,6 +15,9 @@ class Ultrasonic():
     # https://shop.4tronix.co.uk/collections/sensors/products/hc-sr04p-low-voltage-ultrasonic-distance-sensor
     
     RANGE = 450 # max range of this ultrasonic sensor in centimeters
+    # give it a name, vertical and horizontal field of view in degrees
+    (name, orientation, verticalFoV, horizontalFoV) = ("", {}, 15, 30)
+    # records stop/start micro ticks, plus last distance calculated
     (start, stop, distance, calculated) = (0.0, 0.0, INFINITY, True)
     
     @property
