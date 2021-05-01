@@ -45,8 +45,13 @@ class Ultrasonic():
 
     @property
     def temperature(self):
-        # leave room for improvement
-        return temperature.celsius()
+        # leave room for (other) improvements
+        # https://en.wikipedia.org/wiki/List_of_weather_records
+        c = temperature.celsius()
+        if -40 < c < 60:
+            return c
+        else:
+            return 25
         
     def __init__(self, triggerPin, echoPin):
         # just being verbose
