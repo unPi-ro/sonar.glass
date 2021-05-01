@@ -43,6 +43,7 @@ while True:
     if ucm == uCenter.cm:           
         hLeft.alert(ucm)
         hRight.alert(ucm)
+        # a bit longer beep
         utime.sleep(0.200)
         hLeft.stop()
         hRight.stop()
