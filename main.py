@@ -13,8 +13,8 @@ with open('main.txt', 'w') as f:
 # take ur time
 #utime.sleep(5)
 
-# surpize! boot.py globals are visible in main (too)
-# lets turn off the timer, then led, if we got here
+# surpise! boot.py globals are visible in main (too)
+# reconfigure the timer, hence led to flash a bit less
 timer.init(freq=1, mode=Timer.PERIODIC, callback=tick)
 
 # instantiate all (3) distance sensors
