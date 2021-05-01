@@ -38,11 +38,11 @@ while True:
     # sonars are ready
         
     ucm = min(uLeft.cm, uCenter.cm, uRight.cm)
-    if ucm == uLeft.cm: hLeft.beep(uLeft.cm)
-    if ucm == uRight.cm: hRight.beep(uRight.cm)
+    if ucm == uLeft.cm: hLeft.beep(ucm)
+    if ucm == uRight.cm: hRight.beep(ucm)
     if ucm == uCenter.cm:           
-        hLeft.alert(uCenter.cm)
-        hRight.alert(uCenter.cm)
+        hLeft.alert(ucm)
+        hRight.alert(ucm)
         utime.sleep(0.200)
         hLeft.stop()
         hRight.stop()
