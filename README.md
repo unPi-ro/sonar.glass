@@ -1,6 +1,6 @@
 # unPi Sonar Glass
 
-A proof of concept, (cheapest) [Smart Visor for the Blind, built with MicroPython on Raspberry Pico](http://sonar.glass.unpi.ro)
+A proof of concept, [(cheapest) Smart Visor for the Blind](http://sonar.glass.unpi.ro), built with MicroPython on Raspberry Pico
 
 #### How it started
 
